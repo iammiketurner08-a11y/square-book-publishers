@@ -32,8 +32,10 @@ export default function Contact() {
         body: JSON.stringify(data),
       });
 
+      const result = await response.json();
+
       if (!response.ok) {
-        throw new Error('Failed to send inquiry. Please try again.');
+        throw new Error(result.message || 'Failed to send inquiry. Please try again.');
       }
 
       navigate('/thank-you');
