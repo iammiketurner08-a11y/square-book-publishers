@@ -36,7 +36,7 @@ async function startServer() {
       const resendClient = getResend();
       
       const { data, error } = await resendClient.emails.send({
-        from: "Square Book Publishers <onboarding@resend.dev>", // Default Resend domain for testing
+        from: "Square Book Publishers <info@squarebookpublishers.com>", // Default Resend domain for testing
         to: ["query@squarebookpublishers.com"],
         subject: `New Inquiry: ${name} - ${genre}`,
         html: `
