@@ -13,6 +13,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
     steps:
       - name: Checkout
@@ -35,7 +37,7 @@ jobs:
           if [ -d dist ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add dist .cpanel.yml
+            git add -f dist .cpanel.yml
             git diff --cached --quiet || git commit -m "Build dist for cPanel deploy"
             git push
           else
