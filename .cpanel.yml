@@ -1,4 +1,6 @@
+---
 deployment:
   tasks:
     - export DEPLOYPATH=/home/wt3u2v1upg18/public_html/squarebookpublishers.com
-    - /bin/cp -R dist/* $DEPLOYPATH
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R dist/. $DEPLOYPATH
