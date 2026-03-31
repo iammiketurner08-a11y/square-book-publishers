@@ -27,16 +27,20 @@ async function startServer() {
   };
 
   // API routes
+  app.get("/api/health", (req, res) => {
+    res.json({ status: "ok", mode: process.env.NODE_ENV || "development" });
+  });
+
   app.post("/api/contact", async (req, res) => {
     const { name, email, phone, genre, status, message } = req.body;
     
-    console.log("Form Submission Received:", { name, email, phone, genre, status, message });
+    console.log(`[API] POST /api/contact - Submission from: ${name} (${email})`);
     
     try {
       const resendClient = getResend();
       
       const { data, error } = await resendClient.emails.send({
-        from: "Square Book Publishers <info@squarebookpublishers.com>", // Default Resend domain for testing
+        from: "Square Book Publishers <info@squarebookpublishers.com>",
         to: ["query@squarebookpublishers.com"],
         subject: `New Inquiry: ${name} - ${genre}`,
         html: `
@@ -52,16 +56,22 @@ async function startServer() {
       });
 
       if (error) {
-        console.error("Resend Error:", error);
+        console.error("[Resend Error]:", error);
         return res.status(500).json({ success: false, message: "Failed to send email notification." });
       }
 
+      console.log("[API] Email sent successfully:", data?.id);
       res.json({ success: true, message: "Inquiry received successfully!", data });
     } catch (err) {
-      console.error("Server Error:", err);
+      console.error("[Server Error]:", err);
       const errorMessage = err instanceof Error ? err.message : "An unexpected error occurred.";
       res.status(500).json({ success: false, message: errorMessage });
     }
+  });
+
+  // Catch-all for API routes to prevent HTML fallback
+  app.all("/api/*", (req, res) => {
+    res.status(404).json({ success: false, message: `API route not found: ${req.method} ${req.url}` });
   });
 
   // Vite middleware for development
