@@ -73,7 +73,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-bold text-brand-navy">Call Us</h4>
-                    <p className="text-slate-500">+1 (234) 567-890</p>
+                    <p className="text-slate-500">+1 (786) 904-8744</p>
                   </div>
                 </div>
                 <div className="flex gap-6">

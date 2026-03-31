@@ -159,7 +159,7 @@ export function Footer() {
               Square Book Publishers is an independent author services company providing professional publishing support, design, and marketing for authors worldwide.
             </p>
             <div className="flex flex-col gap-3">
-              <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-slate-600 hover:text-brand-accent">
+              <a href="tel:+(786) 904-8744" className="flex items-center gap-2 text-sm text-slate-600 hover:text-brand-accent">
                 <Phone className="w-4 h-4" /> +1 (786) 904-8744
               </a>
               <a href="mailto:support@squarebookpublishers.com" className="flex items-center gap-2 text-sm text-slate-600 hover:text-brand-accent">
