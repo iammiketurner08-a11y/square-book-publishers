@@ -35,7 +35,16 @@ export default function Contact() {
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
+      const responseText = await response.text();
+      console.log('[Contact] Raw response:', responseText);
+
+      let result;
+      try {
+        result = JSON.parse(responseText);
+      } catch (e) {
+        console.error('[Contact] JSON Parse Error:', e);
+        throw new Error(`Server returned an invalid response (HTML instead of JSON). This usually means a routing error or the server is down.`);
+      }
 
       if (!response.ok) {
         throw new Error(result.message || 'Failed to send inquiry. Please try again.');
