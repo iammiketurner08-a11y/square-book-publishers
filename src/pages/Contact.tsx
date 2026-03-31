@@ -23,7 +23,10 @@ export default function Contact() {
       message: formData.get('message'),
     };
 
+    console.log('[Contact] Submitting form data:', data);
+
     try {
+      console.log('[Contact] Fetching /api/contact...');
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
