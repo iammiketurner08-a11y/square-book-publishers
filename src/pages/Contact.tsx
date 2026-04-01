@@ -36,14 +36,18 @@ export default function Contact() {
       });
 
       const responseText = await response.text();
-      console.log('[Contact] Raw response:', responseText);
+      console.log('[Contact] Raw response (first 200 chars):', responseText.substring(0, 200));
 
       let result;
       try {
         result = JSON.parse(responseText);
       } catch (e) {
         console.error('[Contact] JSON Parse Error:', e);
-        throw new Error(`Server returned an invalid response (HTML instead of JSON). This usually means a routing error or the server is down.`);
+        const isHtml = responseText.trim().toLowerCase().startsWith('<!doctype') || responseText.trim().toLowerCase().startsWith('<html');
+        if (isHtml) {
+          throw new Error(`The server returned an HTML page instead of a success message. This usually means the API route doesn't exist on this server or you are being redirected.`);
+        }
+        throw new Error(`Server returned an unreadable response. Please check the console for details.`);
       }
 
       if (!response.ok) {
