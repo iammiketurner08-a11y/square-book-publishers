@@ -17,26 +17,34 @@ export default function Contact() {
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      genre: formData.get('genre'),
-      status: formData.get('status'),
-      message: formData.get('message'),
+      name: formData.get('name') as string || '',
+      email: formData.get('email') as string || '',
+      phone: formData.get('phone') as string || '',
+      genre: formData.get('genre') as string || 'Other',
+      status: formData.get('status') as string || 'Not Specified',
+      message: formData.get('message') as string || '',
     };
 
     console.log('[Contact] Submitting form data:', data);
 
     try {
-      await addDoc(collection(db, 'inquiries'), {
+      const payload: any = {
         name: data.name,
         email: data.email,
-        phone: data.phone || '',
         genre: data.genre,
         status: data.status,
-        message: data.message || '',
         createdAt: serverTimestamp()
-      });
+      };
+
+      if (data.phone && data.phone.trim().length > 0) {
+        payload.phone = data.phone;
+      }
+      
+      if (data.message && data.message.trim().length > 0) {
+        payload.message = data.message;
+      }
+
+      await addDoc(collection(db, 'inquiries'), payload);
 
       navigate('/thank-you');
     } catch (err) {
