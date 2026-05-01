@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 0. Global Safety Net
+    match /{document=**} { 
+      allow read, write: if false; 
+    }
+
+    // Primitive Helpers
+    function isValidId(id) { 
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); 
+    }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+    
+    // Application Rules
+    match /inquiries/{inquiryId} {
+      function isValidInquiry(data) {
+        return data.keys().hasAll(['name', 'email', 'genre', 'status', 'createdAt'])
+          // phone and message are optional, but if present must be strings. Since hasAll doesn't limit extra fields, we need size limit:
+          && data.keys().size() <= 7
+          && data.name is string && data.name.size() > 0 && data.name.size() <= 200
+          && data.email is string && data.email.size() > 0 && data.email.size() <= 200
+          && data.genre is string && data.genre.size() > 0 && data.genre.size() <= 100
+          && data.status is string && data.status.size() > 0 && data.status.size() <= 100
+          && data.createdAt == request.time
+          && (!('phone' in data) || (data.phone is string && data.phone.size() <= 100))
+          && (!('message' in data) || (data.message is string && data.message.size() <= 5000));
+      }
+
+      // Allow public creation of inquiries, but strictly validate the schema
+      allow create: if isValidId(inquiryId) && isValidInquiry(incoming());
+      
+      // Do not allow reading, updating, or deleting from the client.
+      allow read, update, delete: if false;
+    }
+  }
+}

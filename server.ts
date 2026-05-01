@@ -2,7 +2,7 @@ import express from "express";
 import { createServer as createViteServer } from "vite";
 import path from "path";
 import { fileURLToPath } from "url";
-import nodemailer from "nodemailer";
+import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,11 +11,13 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  // Enable CORS for all origins (important for cross-domain form submissions)
+  app.use(cors());
   app.use(express.json());
 
   // 1. API ROUTES FIRST (Absolute priority)
   app.get("/api", (req, res) => {
-    res.json({ message: "API is active" });
+    res.json({ message: "API is active", origin: req.get('origin') || 'unknown' });
   });
 
   app.get("/api/debug", (req, res) => {
@@ -32,82 +34,8 @@ async function startServer() {
     res.json({ status: "ok", mode: process.env.NODE_ENV || "development" });
   });
 
-  // Initialize Nodemailer transporter lazily
-  let transporter: nodemailer.Transporter | null = null;
-  const getTransporter = () => {
-    const user = process.env.GMAIL_USER;
-    const pass = process.env.GMAIL_PASS;
-    
-    if (!user || !pass) {
-      console.error("[Server] CRITICAL: GMAIL_USER or GMAIL_PASS is missing.");
-      throw new Error("Gmail service is not configured. Please add GMAIL_USER and GMAIL_PASS (App Password) to Settings.");
-    }
-    
-    if (!transporter) {
-      transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: user,
-          pass: pass,
-        },
-      });
-    }
-    return transporter;
-  };
-
-  app.post(["/api/contact", "/api/contact/"], async (req, res) => {
-    const { name, email, phone, genre, status, message } = req.body;
-    console.log(`[API] POST /api/contact - Submission from: ${name}`);
-    
-    try {
-      const mailTransporter = getTransporter();
-      
-      const mailOptions = {
-        from: process.env.GMAIL_USER,
-        to: "query@squarebookpublishers.com",
-        subject: `New Inquiry: ${name} - ${genre}`,
-        text: `
-New Inquiry Received
-
-Name: ${name}
-Email: ${email}
-Phone: ${phone || 'N/A'}
-Genre: ${genre}
-Status: ${status}
-
-Message:
-${message || 'No message provided.'}
-        `,
-        html: `
-          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
-            <h2 style="color: #0f172a; border-bottom: 2px solid #f27d26; padding-bottom: 10px;">New Book Inquiry</h2>
-            <div style="margin-top: 20px;">
-              <p><strong>Name:</strong> ${name}</p>
-              <p><strong>Email:</strong> ${email}</p>
-              <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
-              <p><strong>Genre:</strong> ${genre}</p>
-              <p><strong>Manuscript Status:</strong> ${status}</p>
-            </div>
-            <div style="margin-top: 20px; padding: 15px; background-color: #f8fafc; border-radius: 8px;">
-              <p><strong>Message:</strong></p>
-              <p style="white-space: pre-wrap;">${message || 'No message provided.'}</p>
-            </div>
-            <p style="margin-top: 30px; font-size: 12px; color: #64748b; border-top: 1px solid #eee; padding-top: 10px;">
-              This inquiry was sent from the Square Book Publishers contact form.
-            </p>
-          </div>
-        `,
-      };
-
-      const info = await mailTransporter.sendMail(mailOptions);
-      console.log("[API] Email sent successfully:", info.messageId);
-      
-      res.json({ success: true, message: "Inquiry received!", data: { id: info.messageId } });
-    } catch (err) {
-      console.error("[Server Error]:", err);
-      res.status(500).json({ success: false, message: err instanceof Error ? err.message : "Error sending email" });
-    }
-  });
+  // Removed Nodemailer logic as forms are now handled via Firebase Firestore directly
+  // from the client side.
 
   // 2. MIDDLEWARE & LOGGING
   app.use((req, res, next) => {

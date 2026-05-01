@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from 'lucide-react';
+import { db, handleFirestoreError, OperationType } from '../lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export default function Contact() {
   const navigate = useNavigate();
@@ -26,37 +28,23 @@ export default function Contact() {
     console.log('[Contact] Submitting form data:', data);
 
     try {
-      console.log('[Contact] Fetching /api/contact...');
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
+      await addDoc(collection(db, 'inquiries'), {
+        name: data.name,
+        email: data.email,
+        phone: data.phone || '',
+        genre: data.genre,
+        status: data.status,
+        message: data.message || '',
+        createdAt: serverTimestamp()
       });
-
-      const responseText = await response.text();
-      console.log('[Contact] Raw response (first 200 chars):', responseText.substring(0, 200));
-
-      let result;
-      try {
-        result = JSON.parse(responseText);
-      } catch (e) {
-        console.error('[Contact] JSON Parse Error:', e);
-        const isHtml = responseText.trim().toLowerCase().startsWith('<!doctype') || responseText.trim().toLowerCase().startsWith('<html');
-        if (isHtml) {
-          throw new Error(`The server returned an HTML page instead of a success message. This usually means the API route doesn't exist on this server or you are being redirected.`);
-        }
-        throw new Error(`Server returned an unreadable response. Please check the console for details.`);
-      }
-
-      if (!response.ok) {
-        throw new Error(result.message || 'Failed to send inquiry. Please try again.');
-      }
 
       navigate('/thank-you');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An unexpected error occurred.');
+      try {
+        handleFirestoreError(err, OperationType.CREATE, 'inquiries');
+      } catch (firestoreErr) {
+        setError(firestoreErr instanceof Error ? JSON.parse(firestoreErr.message).error : 'An unexpected error occurred.');
+      }
     } finally {
       setLoading(false);
     }

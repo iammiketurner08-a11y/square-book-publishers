@@ -1,0 +1,25 @@
+{
+  "entities": {
+    "Inquiry": {
+      "title": "Contact Inquiry",
+      "description": "A contact inquiry submitted via the website form.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The name of the user" },
+        "email": { "type": "string", "description": "The email of the user" },
+        "phone": { "type": "string", "description": "The phone number of the user" },
+        "genre": { "type": "string", "description": "The genre of the book" },
+        "status": { "type": "string", "description": "The manuscript status" },
+        "message": { "type": "string", "description": "The message attached to the inquiry" },
+        "createdAt": { "type": "number", "description": "Timestamp of submission" }
+      },
+      "required": ["name", "email", "genre", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/inquiries/{inquiryId}": {
+      "schema": { "$ref": "#/entities/Inquiry" },
+      "description": "Storage for contact form inquiries."
+    }
+  }
+}
