@@ -60,7 +60,7 @@ export default function ThankYou() {
             </motion.div>
 
             <div className="mt-12 text-slate-500 text-sm">
-              <p>Need immediate assistance? Call us at <a href="tel:+17869048744" className="font-bold text-brand-navy hover:text-brand-accent transition-colors">+1 +1 (786) 904-8744</a></p>
+              <p>Need immediate assistance? Call us at <a href="tel:+17869048744" className="font-bold text-brand-navy hover:text-brand-accent transition-colors">+1 (786) 904-8744</a></p>
             </div>
           </div>
         </div>
