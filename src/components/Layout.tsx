@@ -36,7 +36,7 @@ export function Header() {
           <Link to="/" className="flex items-center gap-3 group">
             {/* Logo Image - Replace /logo.png with your actual file in the public folder */}
             <img 
-              src="/logo.png" 
+              src="/logo.svg" 
               alt="Square Book Publishers" 
               className="h-24 w-auto object-contain"
               onError={(e) => {
@@ -136,7 +136,7 @@ export function Footer() {
           <div className="flex flex-col gap-6">
             <Link to="/" className="flex items-center gap-3">
               <img 
-                src="/logo.png" 
+                src="/logo.svg" 
                 alt="Square Book Publishers" 
                 className="h-10 w-auto object-contain"
                 onError={(e) => {
