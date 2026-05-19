@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'motion/react';
 
 const PROJECTS = [
-  { title: 'The Silent Horizon', category: 'Fiction', image: 'https://picsum.photos/seed/book1/600/800' },
-  { title: 'Digital Renaissance', category: 'Non-Fiction', image: 'https://picsum.photos/seed/book2/600/800' },
-  { title: 'The Little Dreamer', category: 'Children’s', image: 'https://picsum.photos/seed/book3/600/800' },
-  { title: 'Beyond the Veil', category: 'Fantasy', image: 'https://picsum.photos/seed/book4/600/800' },
-  { title: 'Modern Leadership', category: 'Business', image: 'https://picsum.photos/seed/book5/600/800' },
-  { title: 'Echoes of Time', category: 'Memoir', image: 'https://picsum.photos/seed/book6/600/800' },
+  { title: 'The Silent Horizon', category: 'Fiction', image: '/images/book1.svg' },
+  { title: 'Digital Renaissance', category: 'Non-Fiction', image: '/images/book2.svg' },
+  { title: 'The Little Dreamer', category: 'Children’s', image: '/images/book3.svg' },
+  { title: 'Beyond the Veil', category: 'Fantasy', image: '/images/book4.svg' },
+  { title: 'Modern Leadership', category: 'Business', image: '/images/book5.svg' },
+  { title: 'Echoes of Time', category: 'Memoir', image: '/images/book6.svg' },
 ];
 
 export default function Portfolio() {

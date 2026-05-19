@@ -1,0 +1,48 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" rx="36" fill="#f8fafc"/>
+  <rect width="800" height="600" rx="36" fill="#0f172a" opacity="0.02"/>
+
+  <!-- Minimal Decorative Shapes -->
+  <circle cx="100" cy="100" r="150" fill="#f27d26" opacity="0.05" filter="blur(40px)"/>
+  <circle cx="700" cy="500" r="180" fill="#0f172a" opacity="0.03" filter="blur(30px)"/>
+
+  <!-- Conceptual Representation of Team & Collaboration -->
+  <!-- We can draw elegant geometric avatars with connection lines and books -->
+  <g transform="translate(100, 50)">
+    <!-- Main Center Platform -->
+    <ellipse cx="300" cy="350" rx="250" ry="80" fill="#0f172a" opacity="0.04"/>
+    <ellipse cx="300" cy="340" rx="220" ry="70" fill="#e2e8f0"/>
+
+    <!-- Desk / Table items -->
+    <rect x="220" y="290" width="160" height="60" rx="8" fill="white" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.05))"/>
+    <rect x="250" y="305" width="40" height="30" rx="4" fill="#0f172a"/>
+    <rect x="310" y="315" width="50" height="10" rx="2" fill="#f27d26"/>
+
+    <!-- Left Member Avatar (Design/Editor) -->
+    <g transform="translate(140, 180)">
+      <circle cx="40" cy="40" r="40" fill="#0f172a"/>
+      <!-- Glasses -->
+      <circle cx="28" cy="35" r="8" stroke="white" stroke-width="2" fill="none"/>
+      <circle cx="52" cy="35" r="8" stroke="white" stroke-width="2" fill="none"/>
+      <line x1="36" y1="35" x2="44" y2="35" stroke="white" stroke-width="2"/>
+      <!-- Soft Orange Shirt -->
+      <path d="M0 110C0 85 20 80 40 80C60 80 80 85 80 110V140H0V110Z" fill="#f27d26"/>
+      <!-- Speech Indicator -->
+      <circle cx="90" cy="20" r="15" fill="white" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.05))"/>
+      <path d="M85 20L95 20" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M90 15L90 25" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- Right Member Avatar (Publishing Expert) -->
+    <g transform="translate(380, 180)">
+      <circle cx="40" cy="40" r="40" fill="#1e293b"/>
+      <!-- Hair detail -->
+      <path d="M10 25C15 15, 65 15, 70 25" stroke="white" stroke-width="4" stroke-linecap="round"/>
+      <!-- Warm White / Navy Shirt -->
+      <path d="M0 110C0 85 20 80 40 80C60 80 80 85 80 110V140H0V110Z" fill="#0f172a"/>
+      <!-- Star Badge in background -->
+      <circle cx="90" cy="30" r="16" fill="#f27d26"/>
+      <polygon points="90,20 93,27 101,27 95,32 97,40 90,35 83,40 85,32 79,27 87,27" fill="white"/>
+    </g>
+  </g>
+</svg>

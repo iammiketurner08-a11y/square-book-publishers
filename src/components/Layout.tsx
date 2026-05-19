@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, BookOpen, Phone, Mail, ChevronDown, ArrowRight } from 'lucide-react';
+import { Menu, X, BookOpen, Phone, Mail, ChevronDown, ArrowRight, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const NAV_LINKS = [
@@ -167,11 +167,49 @@ export function Footer() {
               Square Book Publishers is an independent author services company providing professional publishing support, design, and marketing for authors worldwide.
             </p>
             <div className="flex flex-col gap-3">
-              <a href="tel:+(786) 904-8744" className="flex items-center gap-2 text-sm text-slate-600 hover:text-brand-accent">
-                <Phone className="w-4 h-4" /> +1 (786) 904-8744
+              <a href="tel:+(786) 904-8744" className="flex items-center gap-2 text-sm text-slate-600 hover:text-brand-accent transition-colors">
+                <Phone className="w-4 h-4 text-brand-navy" /> +1 (786) 904-8744
               </a>
-              <a href="mailto:support@squarebookpublishers.com" className="flex items-center gap-2 text-sm text-slate-600 hover:text-brand-accent">
-                <Mail className="w-4 h-4" /> support@squarebookpublishers.com
+              <a href="mailto:support@squarebookpublishers.com" className="flex items-center gap-2 text-sm text-slate-600 hover:text-brand-accent transition-colors">
+                <Mail className="w-4 h-4 text-brand-navy" /> support@squarebookpublishers.com
+              </a>
+            </div>
+            <div className="flex items-center gap-3 pt-2">
+              <a 
+                href="https://www.facebook.com/squarebookpublishers" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Facebook" 
+                className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-white hover:bg-brand-navy hover:border-brand-navy transition-all duration-200 shadow-sm"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Twitter" 
+                className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-white hover:bg-brand-navy hover:border-brand-navy transition-all duration-200 shadow-sm"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.instagram.com/squarebookpublishers" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Instagram" 
+                className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-white hover:bg-brand-navy hover:border-brand-navy transition-all duration-200 shadow-sm"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="LinkedIn" 
+                className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-white hover:bg-brand-navy hover:border-brand-navy transition-all duration-200 shadow-sm"
+              >
+                <Linkedin className="w-4 h-4" />
               </a>
             </div>
           </div>

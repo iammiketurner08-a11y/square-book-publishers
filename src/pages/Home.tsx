@@ -38,7 +38,7 @@ export default function Home() {
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map((i) => (
                     <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
-                      <img src={`https://picsum.photos/seed/author${i}/100/100`} alt="Author" referrerPolicy="no-referrer" />
+                      <img src={`/images/author${i}.svg`} alt="Author" referrerPolicy="no-referrer" />
                     </div>
                   ))}
                 </div>
@@ -58,7 +58,7 @@ export default function Home() {
             >
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200">
                 <img 
-                  src="https://picsum.photos/seed/publishing/1200/1600" 
+                  src="/images/hero.svg" 
                   alt="Professional Book Design" 
                   className="w-full h-auto"
                   referrerPolicy="no-referrer"
@@ -156,7 +156,7 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-square rounded-full border border-white/10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] animate-pulse"></div>
               <img 
-                src="https://picsum.photos/seed/process/800/800" 
+                src="/images/process.svg" 
                 alt="Publishing Process" 
                 className="relative z-10 rounded-3xl shadow-2xl"
                 referrerPolicy="no-referrer"
@@ -172,7 +172,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2">
               <img 
-                src="https://picsum.photos/seed/team/800/600" 
+                src="/images/team.svg" 
                 alt="Our Team" 
                 className="rounded-3xl shadow-xl"
                 referrerPolicy="no-referrer"

@@ -182,7 +182,7 @@ export default function Services() {
               </div>
               <div className="relative">
                 <img 
-                  src="https://picsum.photos/seed/services-consult/800/600" 
+                  src="/images/services-consult.svg" 
                   alt="Consultation" 
                   className="rounded-3xl shadow-xl"
                   referrerPolicy="no-referrer"

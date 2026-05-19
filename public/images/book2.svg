@@ -1,0 +1,18 @@
+<svg width="600" height="800" viewBox="0 0 600 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="800" fill="#0f172a"/>
+  
+  <!-- Modern Geometric shapes design represent renaissance -->
+  <g transform="translate(300, 420)">
+    <circle cx="0" cy="0" r="160" stroke="#f27d26" stroke-width="2" stroke-opacity="0.2"/>
+    <rect x="-100" y="-100" width="200" height="200" stroke="white" stroke-width="2" stroke-opacity="0.3" fill="none" transform="rotate(45)"/>
+    <polygon points="0,-120 100,60 -100,60" stroke="#f27d26" stroke-width="2" fill="none"/>
+    <circle cx="0" cy="0" r="10" fill="white"/>
+  </g>
+
+  <rect x="100" y="80" width="400" height="180" fill="white" rx="16"/>
+  <text x="300" y="145" fill="#0f172a" font-family="system-ui" font-size="28" font-weight="900" text-anchor="middle" letter-spacing="2">DIGITAL</text>
+  <text x="300" y="195" fill="#f27d26" font-family="system-ui" font-size="34" font-weight="900" text-anchor="middle" letter-spacing="4">RENAISSANCE</text>
+  <text x="300" y="235" fill="#64748b" font-family="system-ui" font-size="14" font-weight="bold" text-anchor="middle" letter-spacing="1">REDEFINING CREATIVITY IN THE AI ERA</text>
+
+  <text x="300" y="740" fill="white" opacity="0.6" font-family="system-ui" font-size="16" text-anchor="middle" letter-spacing="2">DR. MARCUS CHEN</text>
+</svg>

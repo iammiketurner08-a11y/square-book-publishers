@@ -65,7 +65,7 @@ export default function Process() {
                 </div>
                 <div className={i % 2 === 0 ? "lg:order-2" : "lg:order-1"}>
                   <img 
-                    src={`https://picsum.photos/seed/process-step-${i}/800/600`} 
+                    src={`/images/process-step-${i}.svg`} 
                     alt={step.title} 
                     className="rounded-[3rem] shadow-2xl"
                     referrerPolicy="no-referrer"

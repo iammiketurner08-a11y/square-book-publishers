@@ -1,0 +1,21 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" rx="36" fill="#f8fafc"/>
+  
+  <g transform="translate(250, 150)">
+    <!-- Document -->
+    <rect x="50" y="30" width="200" height="260" rx="16" fill="white" filter="drop-shadow(0 15px 30px rgba(0,0,0,0.06))" stroke="#e2e8f0" stroke-width="2"/>
+    
+    <!-- Text lines -->
+    <rect x="90" y="70" width="120" height="12" rx="6" fill="#0f172a" opacity="0.1"/>
+    <rect x="90" y="100" width="120" height="12" rx="6" fill="#0f172a" opacity="0.1"/>
+    <rect x="90" y="130" width="80" height="12" rx="6" fill="#0f172a" opacity="0.1"/>
+    <rect x="90" y="160" width="100" height="12" rx="6" fill="#0f172a" opacity="0.1"/>
+
+    <!-- Magnifying Glass -->
+    <circle cx="210" cy="210" r="45" fill="none" stroke="#f27d26" stroke-width="8"/>
+    <line x1="242" y1="242" x2="290" y2="290" stroke="#f27d26" stroke-width="10" stroke-linecap="round"/>
+    
+    <!-- Star Highlights -->
+    <path d="M70,220 L74,228 L82,229 L76,235 L78,243 L70,238 L62,243 L64,235 L58,229 L66,228 Z" fill="#f27d26" opacity="0.8"/>
+  </g>
+</svg>

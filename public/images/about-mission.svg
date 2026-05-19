@@ -1,0 +1,29 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" rx="40" fill="#0f172a"/>
+
+  <!-- Compass or Star representing Mission and Guidance -->
+  <g transform="translate(400, 500)">
+    <!-- Main Glowing Aura -->
+    <circle cx="0" cy="0" r="300" fill="#f27d26" opacity="0.1" filter="blur(60px)"/>
+    <circle cx="0" cy="0" r="200" stroke="white" stroke-width="2" stroke-opacity="0.1" stroke-dasharray="10 10"/>
+    <circle cx="0" cy="0" r="100" stroke="white" stroke-width="2" stroke-opacity="0.1"/>
+
+    <!-- Compass Rose North/South -->
+    <path d="M0 -150 L20 0 L-20 0 Z" fill="#f27d26"/>
+    <path d="M0 150 L20 0 L-20 0 Z" fill="#ffffff" opacity="0.3"/>
+    
+    <!-- Compass Rose East/West -->
+    <path d="M150 0 L0 20 L0 -20 Z" fill="#ffffff" opacity="0.6"/>
+    <path d="-150 0 L0 20 L0 -20 Z" fill="#ffffff" opacity="0.3"/>
+
+    <!-- Sparkles and Dots -->
+    <circle cx="120" cy="-120" r="4" fill="#f27d26"/>
+    <circle cx="-120" cy="120" r="6" fill="white" opacity="0.5"/>
+    <circle cx="150" cy="80" r="3" fill="white"/>
+    <circle cx="-160" cy="-100" r="5" fill="#f27d26"/>
+  </g>
+
+  <!-- Title / Label on the SVG itself but generic & elegant -->
+  <rect x="250" y="850" width="300" height="4" rx="2" fill="white" opacity="0.1"/>
+  <rect x="350" y="870" width="100" height="4" rx="2" fill="#f27d26" opacity="0.8"/>
+</svg>

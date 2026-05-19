@@ -1,0 +1,14 @@
+<svg width="600" height="800" viewBox="0 0 600 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="800" fill="#1e1b4b"/>
+  <!-- Decorative Mountain under Stars -->
+  <path d="M0 600L150 450L350 620L480 520L600 680H0V600Z" fill="#312e81"/>
+  <path d="M80 650H520L300 480L80 650Z" fill="#e0f2fe" opacity="0.1"/>
+  
+  <circle cx="300" cy="300" r="120" stroke="#f27d26" stroke-width="4" stroke-opacity="0.3"/>
+  <circle cx="300" cy="300" r="8" fill="#f27d26"/>
+
+  <text x="300" y="150" fill="white" font-family="system-ui" font-size="36" font-weight="bold" text-anchor="middle" letter-spacing="4">THE SILENT</text>
+  <text x="300" y="210" fill="#f27d26" font-family="system-ui" font-size="44" font-weight="bold" text-anchor="middle" letter-spacing="6">HORIZON</text>
+  
+  <text x="300" y="740" fill="white" opacity="0.6" font-family="system-ui" font-size="16" text-anchor="middle" letter-spacing="2">A NOVEL BY ELEANOR VANCE</text>
+</svg>

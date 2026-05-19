@@ -42,7 +42,7 @@ export default function About() {
             </div>
             <div className="relative">
               <img 
-                src="https://picsum.photos/seed/about-mission/800/1000" 
+                src="/images/about-mission.svg" 
                 alt="Our Mission" 
                 className="rounded-3xl shadow-2xl"
                 referrerPolicy="no-referrer"

@@ -1,0 +1,23 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" rx="36" fill="#f8fafc"/>
+  
+  <g transform="translate(250, 150)">
+    <!-- Book cover/interior mock with vectors -->
+    <rect x="50" y="30" width="200" height="260" rx="16" fill="#0f172a" filter="drop-shadow(0 15px 30px rgba(0,0,0,0.12))"/>
+    <rect x="50" y="30" width="15" height="260" fill="#f27d26"/>
+
+    <!-- Geometric Layout Vector Design of cover -->
+    <circle cx="150" cy="140" r="45" stroke="#f27d26" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
+    <polygon points="150,110 162,130 185,130 167,145 174,168 150,153 126,168 133,145 115,130 138,130" fill="white" opacity="0.9"/>
+    
+    <!-- Design tools cursor or crosshair -->
+    <path d="M150 70 L150 210" stroke="white" stroke-width="1" stroke-opacity="0.3"/>
+    <path d="M70 140 L230 140" stroke="white" stroke-width="1" stroke-opacity="0.3"/>
+
+    <!-- Palette dots at the bottom -->
+    <circle cx="90" cy="245" r="8" fill="#f27d26"/>
+    <circle cx="115" cy="245" r="8" fill="#0284c7"/>
+    <circle cx="140" cy="245" r="8" fill="#10b981"/>
+    <circle cx="165" cy="245" r="8" fill="#ffffff"/>
+  </g>
+</svg>
