@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, BookOpen, Phone, Mail, ChevronDown } from 'lucide-react';
+import { Menu, X, BookOpen, Phone, Mail, ChevronDown, ArrowRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const NAV_LINKS = [
@@ -87,16 +87,24 @@ export function Header() {
             ))}
             <Link
               to="/contact"
-              className="bg-brand-navy text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-accent transition-all shadow-lg shadow-brand-navy/10"
+              className="bg-brand-navy text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-brand-accent transition-all flex items-center gap-2 shadow-lg shadow-brand-navy/15"
             >
-              Get a Quote
+              Get a Quote <ArrowRight className="w-4 h-4" />
             </Link>
           </nav>
 
-          {/* Mobile Menu Toggle */}
-          <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X /> : <Menu />}
-          </button>
+          {/* Mobile Right Action Area */}
+          <div className="flex md:hidden items-center gap-3">
+            <Link
+              to="/contact"
+              className="bg-brand-navy text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-brand-accent transition-all flex items-center gap-1.5 shadow-md shadow-brand-navy/10"
+            >
+              Get a Quote <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <button className="p-2 text-slate-600 hover:text-brand-navy" onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -116,10 +124,10 @@ export function Header() {
             ))}
             <Link
               to="/contact"
-              className="bg-brand-navy text-white px-6 py-3 rounded-xl text-center font-semibold"
+              className="bg-brand-navy text-white px-6 py-3 rounded-xl text-center font-bold flex items-center justify-center gap-2"
               onClick={() => setIsOpen(false)}
             >
-              Get a Quote
+              Get a Quote <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
