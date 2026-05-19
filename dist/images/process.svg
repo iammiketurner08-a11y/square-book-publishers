@@ -1,0 +1,64 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" rx="48" fill="url(#bgGrad2)"/>
+
+  <!-- Background Grid -->
+  <g stroke="white" stroke-opacity="0.04" stroke-width="1.5">
+    <line x1="100" y1="0" x2="100" y2="800"/>
+    <line x1="200" y1="0" x2="200" y2="800"/>
+    <line x1="300" y1="0" x2="300" y2="800"/>
+    <line x1="400" y1="0" x2="400" y2="800"/>
+    <line x1="500" y1="0" x2="500" y2="800"/>
+    <line x1="600" y1="0" x2="600" y2="800"/>
+    <line x1="700" y1="0" x2="700" y2="800"/>
+    
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="0" y1="600" x2="800" y2="600"/>
+    <line x1="0" y1="700" x2="800" y2="700"/>
+  </g>
+
+  <!-- Step Connections (Floating Dashed Line) -->
+  <path d="M180 400 C 280 250, 520 250, 620 400" stroke="#f27d26" stroke-width="3" stroke-dasharray="8 8" opacity="0.6"/>
+
+  <!-- Concept Drawing: Manuscript turning into a global published star -->
+  <g transform="translate(100, 300)">
+    <!-- Document Stack -->
+    <rect x="20" y="40" width="100" height="130" rx="8" fill="white" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.3))"/>
+    <rect x="25" y="45" width="90" height="2" fill="#0f172a" opacity="0.2"/>
+    <rect x="25" y="55" width="90" height="2" fill="#0f172a" opacity="0.2"/>
+    <rect x="25" y="65" width="60" height="2" fill="#0f172a" opacity="0.2"/>
+    <rect x="25" y="75" width="80" height="2" fill="#0f172a" opacity="0.2"/>
+    <!-- Pencil -->
+    <rect x="100" y="110" width="40" height="8" rx="2" transform="rotate(-45 100 110)" fill="#f27d26"/>
+  </g>
+
+  <!-- Central Gear or Transformation -->
+  <g transform="translate(350, 350)" stroke="#f27d26" stroke-width="4">
+    <circle cx="50" cy="50" r="40" fill="none" stroke-width="8"/>
+    <!-- Cog spokes -->
+    <line x1="50" y1="2" x2="50" y2="12"/>
+    <line x1="50" y1="88" x2="50" y2="98"/>
+    <line x1="2" y1="50" x2="12" y2="50"/>
+    <line x1="88" y1="50" x2="98" y2="50"/>
+    <!-- Little core circle -->
+    <circle cx="50" cy="50" r="10" fill="#f27d26"/>
+  </g>
+
+  <g transform="translate(520, 290)">
+    <!-- Finished Hardcover Book -->
+    <path d="M40 40C40 34.4772 44.4772 30 50 30H130C135.523 30 140 34.4772 140 40V160C140 165.523 135.523 170 130 170H50C44.4772 170 40 165.523 40 160V40Z" fill="white" filter="drop-shadow(0 20px 25px rgba(0,0,0,0.4))"/>
+    <rect x="40" y="30" width="12" height="140" fill="#f27d26"/>
+    <circle cx="95" cy="85" r="20" fill="#0f172a"/>
+    <polygon points="95,73 99,81 108,82 101,88 103,97 95,92 87,97 89,88 82,82 91,81" fill="#f27d26"/>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" rx="36" fill="#f8fafc"/>
+  
+  <g transform="translate(250, 150)">
+    <!-- Paper -->
+    <rect x="50" y="30" width="200" height="260" rx="16" fill="white" filter="drop-shadow(0 15px 30px rgba(0,0,0,0.06))" stroke="#e2e8f0" stroke-width="2"/>
+    
+    <!-- Editorial marks (some lines crossed or corrected in brand color) -->
+    <rect x="90" y="70" width="120" height="12" rx="6" fill="#0f172a" opacity="0.1"/>
+    <!-- Overwrite with orange correction line -->
+    <path d="M85 76 L215 76" stroke="#f27d26" stroke-width="3" stroke-linecap="round"/>
+    
+    <rect x="90" y="110" width="100" height="12" rx="6" fill="#0f172a" opacity="0.1"/>
+    <!-- Checkmark indicator -->
+    <path d="M205 110L211 116L222 105" stroke="#f27d26" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="90" y="150" width="70" height="12" rx="6" fill="#0f172a" opacity="0.1"/>
+    <rect x="90" y="190" width="110" height="12" rx="6" fill="#0f172a" opacity="0.1"/>
+
+    <!-- Pencil drawing/correcting -->
+    <g transform="translate(180, 160) rotate(-35)">
+      <rect x="0" y="0" width="30" height="140" rx="4" fill="#64748b"/>
+      <rect x="0" y="110" width="30" height="20" fill="#f27d26"/> <!-- eraser -->
+      <polygon points="0,0 15,-25 30,0" fill="#edd6af"/> <!-- lead tip -->
+      <polygon points="10,-10 15,-25 20,-10" fill="#0f172a"/>
+    </g>
+  </g>
+</svg>

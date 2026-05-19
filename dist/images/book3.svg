@@ -1,0 +1,24 @@
+<svg width="600" height="800" viewBox="0 0 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky background -->
+  <rect width="600" height="800" fill="#0284c7"/>
+  
+  <ellipse cx="300" cy="740" rx="400" ry="150" fill="#0f172a" opacity="0.1"/>
+  
+  <!-- Clouds -->
+  <circle cx="120" cy="450" r="60" fill="white" opacity="0.8"/>
+  <circle cx="180" cy="450" r="80" fill="white" opacity="0.8"/>
+  <circle cx="240" cy="450" r="60" fill="white" opacity="0.8"/>
+  
+  <!-- Moon and Stars -->
+  <circle cx="450" cy="200" r="70" fill="#fef08a"/>
+  <!-- overlap to make a crescent -->
+  <circle cx="415" cy="180" r="70" fill="#0284c7"/>
+
+  <polygon points="150,120 153,130 163,131 155,137 157,147 149,141 141,147 143,137 135,131 145,130" fill="#fef08a"/>
+  <polygon points="300,320 302,327 309,328 304,332 305,339 300,335 295,339 296,332 291,328 298,327" fill="#fef08a"/>
+
+  <text x="300" y="560" fill="white" font-family="system-ui" font-size="36" font-weight="bold" text-anchor="middle" letter-spacing="2">THE LITTLE</text>
+  <text x="300" y="620" fill="#fef08a" font-family="system-ui" font-size="44" font-weight="bold" text-anchor="middle" letter-spacing="4">DREAMER</text>
+  
+  <text x="300" y="720" fill="white" font-family="system-ui" font-size="16" font-style="italic" text-anchor="middle">Written by Sarah Jenkins • Illustrated by Leo Garcia</text>
+</svg>

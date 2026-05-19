@@ -1,0 +1,20 @@
+<svg width="600" height="800" viewBox="0 0 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="800" fill="#f8fafc"/>
+  <rect width="600" height="800" fill="#0f172a" opacity="0.02"/>
+
+  <!-- Corporate / Leadership Graphic Elements -->
+  <!-- Triangle / Ascent representing Modern Corporate hierarchy & leading upward -->
+  <polygon points="300,240 450,550 150,550" fill="#0f172a"/>
+  <!-- Highlight in Orange -->
+  <polygon points="300,240 350,340 250,340" fill="#f27d26"/>
+
+  <g transform="translate(60, 80)">
+    <text x="0" y="40" fill="#0f172a" font-family="system-ui" font-size="44" font-weight="900" letter-spacing="2">MODERN</text>
+    <text x="0" y="90" fill="#f27d26" font-family="system-ui" font-size="52" font-weight="900" letter-spacing="4">LEADERSHIP</text>
+    <rect x="0" y="110" width="120" height="8" fill="#0f172a"/>
+  </g>
+
+  <rect x="0" y="680" width="600" height="120" fill="#0f172a"/>
+  <text x="60" y="745" fill="white" font-family="system-ui" font-size="20" font-weight="bold" letter-spacing="1">ARTHUR Pendelton</text>
+  <text x="60" y="770" fill="white" opacity="0.5" font-family="system-ui" font-size="14" letter-spacing="1">Bestselling Author of 'The Grid'</text>
+</svg>
